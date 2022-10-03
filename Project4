@@ -1,0 +1,17 @@
+#Dowlnoad the data (later - GRCh37), explore it and convert into a vcf file:
+conda install -c bioconda bcftools
+
+
+--------------------------------------
+conda install -c bioconda plink #tool widely used in population genetics
+
+#1. remove all SNPs corresponding to deletions and insertions, to make the file compatible with annotation tools.
+plink --23file SNP_raw_v4_Full_20170514175358.txt --recode vcf --out snps_clean --output-chr MT --snps-only just-acgt
+
+#2.Origin, haplogroups
+#then upload your row data in https://isogg.org/wiki/MtDNA_tools for mtDNA haplogroup
+#then in https://ytree.morleydna.com/extractFromAutosomal for Y-chromosome haplogroup
+
+#LASER: find relative to other populations (does not work)
+
+#3. Annotate
